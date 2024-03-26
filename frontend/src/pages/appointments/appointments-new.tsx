@@ -48,7 +48,7 @@ const AppointmentsNew = () => {
   const dispatch = useAppDispatch();
 
   // get from url params
-  const { start_time, end_time } = router.query;
+  const { dateRangeStart, dateRangeEnd } = router.query;
 
   const handleSubmit = async (data) => {
     await dispatch(create(data));
@@ -70,11 +70,12 @@ const AppointmentsNew = () => {
         <CardBox>
           <Formik
             initialValues={
-              start_time && end_time
+              dateRangeStart && dateRangeEnd
                 ? {
                     ...initialValues,
-                    start_time: moment(start_time).format('YYYY-MM-DDTHH:mm'),
-                    end_time: moment(end_time).format('YYYY-MM-DDTHH:mm'),
+                    start_time:
+                      moment(dateRangeStart).format('YYYY-MM-DDTHH:mm'),
+                    end_time: moment(dateRangeEnd).format('YYYY-MM-DDTHH:mm'),
                   }
                 : initialValues
             }

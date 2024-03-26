@@ -98,6 +98,55 @@ const ContactsView = () => {
             )}
           </div>
 
+          <>
+            <p className={'block font-bold mb-2'}>Appointments</p>
+            <CardBox
+              className='mb-6 border border-gray-300 rounded overflow-hidden'
+              hasTable
+            >
+              <div className='overflow-x-auto'>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>StartTime</th>
+
+                      <th>EndTime</th>
+
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {contacts.appointments &&
+                      Array.isArray(contacts.appointments) &&
+                      contacts.appointments.map((item: any) => (
+                        <tr
+                          key={item.id}
+                          onClick={() =>
+                            router.push(
+                              `/appointments/appointments-view/?id=${item.id}`,
+                            )
+                          }
+                        >
+                          <td data-label='start_time'>
+                            {dataFormatter.dateTimeFormatter(item.start_time)}
+                          </td>
+
+                          <td data-label='end_time'>
+                            {dataFormatter.dateTimeFormatter(item.end_time)}
+                          </td>
+
+                          <td data-label='description'>{item.description}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
+              {!contacts?.appointments?.length && (
+                <div className={'text-center py-4'}>No data</div>
+              )}
+            </CardBox>
+          </>
+
           <BaseDivider />
 
           <BaseButton

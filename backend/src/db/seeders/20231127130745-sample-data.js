@@ -17,33 +17,44 @@ const Reports = db.reports;
 
 const AppointmentsData = [
   {
-    start_time: new Date('2023-05-28'),
+    start_time: new Date('2023-12-01'),
 
-    end_time: new Date('2024-01-28'),
+    end_time: new Date('2023-08-16'),
 
     description:
-      'Yes, a Jedi’s strength flows from the Force. But beware of the dark side. Anger, fear, aggression; the dark side of the Force are they. Easily they flow, quick to join you in a fight. If once you start down the dark path, forever will it dominate your destiny, consume you it will, as it did Obi-Wan’s apprentice.',
+      'Death is a natural part of life. Rejoice for those around you who transform into the Force. Mourn them do not. Miss them do not. Attachment leads to jealously. The shadow of greed, that is.',
 
     // type code here for "relation_many" field
   },
 
   {
-    start_time: new Date('2024-03-06'),
+    start_time: new Date('2024-01-07'),
 
-    end_time: new Date('2023-06-06'),
+    end_time: new Date('2023-11-27'),
 
-    description: 'Adventure. Excitement. A Jedi craves not these things.',
+    description:
+      'Much to learn you still have my old padawan. ... This is just the beginning!',
 
     // type code here for "relation_many" field
   },
 
   {
-    start_time: new Date('2023-10-09'),
+    start_time: new Date('2024-01-29'),
 
-    end_time: new Date('2023-06-11'),
+    end_time: new Date('2023-06-21'),
+
+    description: 'Truly wonderful, the mind of a child is.',
+
+    // type code here for "relation_many" field
+  },
+
+  {
+    start_time: new Date('2023-10-10'),
+
+    end_time: new Date('2024-01-27'),
 
     description:
-      'Soon will I rest, yes, forever sleep. Earned it I have. Twilight is upon me, soon night must fall.',
+      'Once you start down the dark path, forever will it dominate your destiny, consume you it will.',
 
     // type code here for "relation_many" field
   },
@@ -51,59 +62,85 @@ const AppointmentsData = [
 
 const ContactsData = [
   {
-    first_name: 'Yup',
-
-    last_name: 'Texas!',
-
-    phone_number: "Goin' hog huntin'",
-
-    email: 'enrique.hilpert@oreilly.com',
-
-    category: 'Client',
-
-    interaction_history: 'Mudhole? Slimy? My home this is!',
-
-    project_notes:
-      'Pain, suffering, death I feel. Something terrible has happened. Young Skywalker is in pain. Terrible pain',
-  },
-
-  {
-    first_name: 'Texas!',
+    first_name: "It's around here somewhere",
 
     last_name: "C'mon Naomi",
 
-    phone_number: 'Turd gone wrong',
+    phone_number: 'My boss gonna fire me',
 
-    email: 'conrad_mayert@bechtelar-luettgen.biz',
+    email: 'salina@steuber.org',
 
-    category: 'Supplier',
+    category: 'Client',
 
     interaction_history:
-      'Pain, suffering, death I feel. Something terrible has happened. Young Skywalker is in pain. Terrible pain',
+      'Always two there are, no more, no less. A master and an apprentice.',
 
-    project_notes: 'Luminous beings are we - not this crude matter.',
+    project_notes: 'Reckless he is. Matters are worse.',
+
+    // type code here for "relation_many" field
+  },
+
+  {
+    first_name: "That's messed up",
+
+    last_name: "That's messed up",
+
+    phone_number: 'Let me tell ya',
+
+    email: 'billy@ledner.co',
+
+    category: 'Subcontractor',
+
+    interaction_history: 'Already know you that which you need.',
+
+    project_notes:
+      'Yes, a Jedi’s strength flows from the Force. But beware of the dark side. Anger, fear, aggression; the dark side of the Force are they. Easily they flow, quick to join you in a fight. If once you start down the dark path, forever will it dominate your destiny, consume you it will, as it did Obi-Wan’s apprentice.',
+
+    // type code here for "relation_many" field
+  },
+
+  {
+    first_name: 'That damn Bill Stull',
+
+    last_name: 'That goddamn Datamate',
+
+    phone_number: 'Reminds me of my old girlfriend Olga Goodntight',
+
+    email: 'chester@pacocha.name',
+
+    category: 'Client',
+
+    interaction_history:
+      'Much to learn you still have my old padawan. ... This is just the beginning!',
+
+    project_notes: 'Ow, ow, OW! On my ear you are!',
+
+    // type code here for "relation_many" field
   },
 
   {
     first_name: 'Got depression, Smith and Wessen',
 
-    last_name: "That Barbala couldn't fly his way out of a wet paper bag",
+    last_name: "C'mon Naomi",
 
-    phone_number: 'That damn gimble',
+    phone_number: 'My boss gonna fire me',
 
-    email: 'janean@collier-zemlak.biz',
+    email: 'harrison.morissette@okeefe.co',
 
     category: 'Supplier',
 
-    interaction_history: 'That is why you fail.',
+    interaction_history: 'You will find only what you bring in.',
 
-    project_notes: 'To answer power with power, the Jedi way this is',
+    project_notes:
+      'Ready are you? What know you of ready? For eight hundred years have I trained Jedi. My own counsel will I keep on who is to be trained. A Jedi must have the deepest commitment, the most serious mind. This one a long time have I watched. All his life has he looked away - to the future, to the horizon. Never his mind on where he was. Hmm? What he was doing. Hmph. Adventure. Heh. Excitement. Heh. A Jedi craves not these things. You are reckless.',
+
+    // type code here for "relation_many" field
   },
 ];
 
 const DocumentsData = [
   {
-    title: "That Barbala couldn't fly his way out of a wet paper bag",
+    title: 'Turd gone wrong',
 
     // type code here for "files" field
 
@@ -111,7 +148,7 @@ const DocumentsData = [
   },
 
   {
-    title: "That's messed up",
+    title: "It's around here somewhere",
 
     // type code here for "files" field
 
@@ -119,7 +156,15 @@ const DocumentsData = [
   },
 
   {
-    title: 'Let me tell ya',
+    title: 'That damn diabetes',
+
+    // type code here for "files" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    title: "Goin' hog huntin'",
 
     // type code here for "files" field
 
@@ -129,43 +174,57 @@ const DocumentsData = [
 
 const EstimatesData = [
   {
-    estimate_number: 'Reminds me of my old girlfriend Olga Goodntight',
-
-    material_cost: 52.91,
-
-    labor_cost: 59.78,
-
-    total_cost: 34.15,
-
-    profit_margin: 43.14,
-
-    // type code here for "relation_one" field
-  },
-
-  {
-    estimate_number: 'That damn gimble',
-
-    material_cost: 23.86,
-
-    labor_cost: 42.93,
-
-    total_cost: 47.87,
-
-    profit_margin: 84.71,
-
-    // type code here for "relation_one" field
-  },
-
-  {
     estimate_number: 'I got that scurvy',
 
-    material_cost: 23.55,
+    material_cost: 72.48,
 
-    labor_cost: 94.02,
+    labor_cost: 17.34,
 
-    total_cost: 92.45,
+    total_cost: 19.51,
 
-    profit_margin: 66.28,
+    profit_margin: 67.73,
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    estimate_number: 'That damn diabetes',
+
+    material_cost: 17.35,
+
+    labor_cost: 20.01,
+
+    total_cost: 46.17,
+
+    profit_margin: 66.65,
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    estimate_number: 'Might be DQ time',
+
+    material_cost: 87.04,
+
+    labor_cost: 94.76,
+
+    total_cost: 79.08,
+
+    profit_margin: 21.69,
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    estimate_number: 'No one tells me shit',
+
+    material_cost: 99.54,
+
+    labor_cost: 69.67,
+
+    total_cost: 66.22,
+
+    profit_margin: 33.48,
 
     // type code here for "relation_one" field
   },
@@ -173,11 +232,11 @@ const EstimatesData = [
 
 const InvoicesData = [
   {
-    invoice_number: 'Let me tell ya',
+    invoice_number: 'Like a red-headed stepchild',
 
-    amount: 81.09,
+    amount: 82.03,
 
-    issue_date: new Date('2023-08-11'),
+    issue_date: new Date('2023-11-23'),
 
     status: 'Paid',
 
@@ -187,9 +246,21 @@ const InvoicesData = [
   {
     invoice_number: 'That goddamn Datamate',
 
-    amount: 67.72,
+    amount: 67.85,
 
-    issue_date: new Date('2023-06-18'),
+    issue_date: new Date('2023-11-10'),
+
+    status: 'Draft',
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    invoice_number: 'I tell you what',
+
+    amount: 25.38,
+
+    issue_date: new Date('2023-07-16'),
 
     status: 'Overdue',
 
@@ -197,11 +268,11 @@ const InvoicesData = [
   },
 
   {
-    invoice_number: "That's messed up",
+    invoice_number: 'That damn gimble',
 
-    amount: 33.45,
+    amount: 22.66,
 
-    issue_date: new Date('2023-09-01'),
+    issue_date: new Date('2023-12-28'),
 
     status: 'Overdue',
 
@@ -211,17 +282,49 @@ const InvoicesData = [
 
 const JobsData = [
   {
-    title: 'Always the last one to the party',
+    title: "Goin' hog huntin'",
+
+    status: 'Completed',
+
+    task_assignments:
+      'Yes, a Jedi’s strength flows from the Force. But beware of the dark side. Anger, fear, aggression; the dark side of the Force are they. Easily they flow, quick to join you in a fight. If once you start down the dark path, forever will it dominate your destiny, consume you it will, as it did Obi-Wan’s apprentice.',
+
+    progress_updates:
+      'Through the Force, things you will see. Other places. The future - the past. Old friends long gone.',
+
+    communication_logs:
+      'Adventure. Excitement. A Jedi craves not these things.',
+
+    // type code here for "relation_many" field
+  },
+
+  {
+    title: "C'mon Naomi",
 
     status: 'Initiation',
 
     task_assignments:
-      'Pain, suffering, death I feel. Something terrible has happened. Young Skywalker is in pain. Terrible pain',
+      'The dark side clouds everything. Impossible to see the future is.',
 
-    progress_updates:
-      'Much to learn you still have my old padawan. ... This is just the beginning!',
+    progress_updates: 'Reckless he is. Matters are worse.',
 
-    communication_logs: 'Good relations with the Wookiees, I have.',
+    communication_logs:
+      'Death is a natural part of life. Rejoice for those around you who transform into the Force. Mourn them do not. Miss them do not. Attachment leads to jealously. The shadow of greed, that is.',
+
+    // type code here for "relation_many" field
+  },
+
+  {
+    title: 'I got that scurvy',
+
+    status: 'InProgress',
+
+    task_assignments:
+      'Strong is Vader. Mind what you have learned. Save you it can.',
+
+    progress_updates: 'Adventure. Excitement. A Jedi craves not these things.',
+
+    communication_logs: 'Reckless he is. Matters are worse.',
 
     // type code here for "relation_many" field
   },
@@ -231,27 +334,13 @@ const JobsData = [
 
     status: 'Completed',
 
-    task_assignments: 'Your weapons, you will not need them.',
+    task_assignments:
+      'Always two there are, no more, no less. A master and an apprentice.',
 
-    progress_updates: 'To answer power with power, the Jedi way this is',
-
-    communication_logs:
-      'Through the Force, things you will see. Other places. The future - the past. Old friends long gone.',
-
-    // type code here for "relation_many" field
-  },
-
-  {
-    title: "That Barbala couldn't fly his way out of a wet paper bag",
-
-    status: 'Initiation',
-
-    task_assignments: 'Ow, ow, OW! On my ear you are!',
-
-    progress_updates: 'Your weapons, you will not need them.',
+    progress_updates: 'Do. Or do not. There is no try.',
 
     communication_logs:
-      'Through the Force, things you will see. Other places. The future - the past. Old friends long gone.',
+      'Strong is Vader. Mind what you have learned. Save you it can.',
 
     // type code here for "relation_many" field
   },
@@ -259,29 +348,39 @@ const JobsData = [
 
 const ReportsData = [
   {
-    title: 'No one tells me shit',
+    title: 'I tell you what',
 
-    date_generated: new Date('2023-10-24'),
-
-    // type code here for "files" field
-  },
-
-  {
-    title: "It's around here somewhere",
-
-    date_generated: new Date('2023-06-09'),
+    date_generated: new Date('2023-09-25'),
 
     // type code here for "files" field
   },
 
   {
-    title: "How 'bout them Cowboys",
+    title: 'Standby',
 
-    date_generated: new Date('2024-02-13'),
+    date_generated: new Date('2023-09-18'),
+
+    // type code here for "files" field
+  },
+
+  {
+    title: 'That damn Bill Stull',
+
+    date_generated: new Date('2024-03-17'),
+
+    // type code here for "files" field
+  },
+
+  {
+    title: 'That damn diabetes',
+
+    date_generated: new Date('2023-04-09'),
 
     // type code here for "files" field
   },
 ];
+
+// Similar logic for "relation_many"
 
 // Similar logic for "relation_many"
 
@@ -320,6 +419,17 @@ async function associateDocumentWithJob() {
   if (Document2?.setJob) {
     await Document2.setJob(relatedJob2);
   }
+
+  const relatedJob3 = await Jobs.findOne({
+    offset: Math.floor(Math.random() * (await Jobs.count())),
+  });
+  const Document3 = await Documents.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Document3?.setJob) {
+    await Document3.setJob(relatedJob3);
+  }
 }
 
 async function associateEstimateWithJob() {
@@ -354,6 +464,17 @@ async function associateEstimateWithJob() {
   });
   if (Estimate2?.setJob) {
     await Estimate2.setJob(relatedJob2);
+  }
+
+  const relatedJob3 = await Jobs.findOne({
+    offset: Math.floor(Math.random() * (await Jobs.count())),
+  });
+  const Estimate3 = await Estimates.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Estimate3?.setJob) {
+    await Estimate3.setJob(relatedJob3);
   }
 }
 
@@ -390,6 +511,17 @@ async function associateInvoiceWithJob() {
   if (Invoice2?.setJob) {
     await Invoice2.setJob(relatedJob2);
   }
+
+  const relatedJob3 = await Jobs.findOne({
+    offset: Math.floor(Math.random() * (await Jobs.count())),
+  });
+  const Invoice3 = await Invoices.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Invoice3?.setJob) {
+    await Invoice3.setJob(relatedJob3);
+  }
 }
 
 // Similar logic for "relation_many"
@@ -411,6 +543,8 @@ module.exports = {
     await Reports.bulkCreate(ReportsData);
 
     await Promise.all([
+      // Similar logic for "relation_many"
+
       // Similar logic for "relation_many"
 
       // Similar logic for "relation_many"

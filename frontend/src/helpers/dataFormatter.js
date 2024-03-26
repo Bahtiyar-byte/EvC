@@ -58,6 +58,25 @@ export default {
     return { label: val.firstName, id: val.id };
   },
 
+  appointmentsManyListFormatter(val) {
+    if (!val || !val.length) return [];
+    return val.map((item) => item.description);
+  },
+  appointmentsOneListFormatter(val) {
+    if (!val) return '';
+    return val.description;
+  },
+  appointmentsManyListFormatterEdit(val) {
+    if (!val || !val.length) return [];
+    return val.map((item) => {
+      return { id: item.id, label: item.description };
+    });
+  },
+  appointmentsOneListFormatterEdit(val) {
+    if (!val) return '';
+    return { label: val.description, id: val.id };
+  },
+
   jobsManyListFormatter(val) {
     if (!val || !val.length) return [];
     return val.map((item) => item.title);

@@ -50,6 +50,8 @@ const EditContacts = () => {
     interaction_history: '',
 
     project_notes: '',
+
+    appointments: [],
   };
   const [initialValues, setInitialValues] = useState(initVals);
 
@@ -143,6 +145,17 @@ const EditContacts = () => {
                   name='project_notes'
                   id='project_notes'
                   component={RichTextField}
+                ></Field>
+              </FormField>
+
+              <FormField label='Appointments' labelFor='appointments'>
+                <Field
+                  name='appointments'
+                  id='appointments'
+                  component={SelectFieldMany}
+                  options={initialValues.appointments}
+                  itemRef={'appointments'}
+                  showField={'description'}
                 ></Field>
               </FormField>
 

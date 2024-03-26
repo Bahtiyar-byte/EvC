@@ -5,9 +5,9 @@ import { useAppSelector } from '../../stores/hooks';
 import dataFormatter from '../../helpers/dataFormatter';
 import { Pagination } from '../Pagination';
 import { saveFile } from '../../helpers/fileSaver';
+import LoadingSpinner from '../LoadingSpinner';
 
 import { hasPermission } from '../../helpers/userPermissions';
-import LoadingSpinner from '../LoadingSpinner';
 
 type Props = {
   contacts: any[];
@@ -137,6 +137,19 @@ const CardUsers = ({
                   <dd className='flex items-start gap-x-2'>
                     <div className='font-medium line-clamp-4'>
                       {item.project_notes}
+                    </div>
+                  </dd>
+                </div>
+
+                <div className='flex justify-between gap-x-4 py-3'>
+                  <dt className='text-gray-500 dark:text-dark-600'>
+                    Appointments
+                  </dt>
+                  <dd className='flex items-start gap-x-2'>
+                    <div className='font-medium line-clamp-4'>
+                      {dataFormatter
+                        .appointmentsManyListFormatter(item.appointments)
+                        .join(', ')}
                     </div>
                   </dd>
                 </div>

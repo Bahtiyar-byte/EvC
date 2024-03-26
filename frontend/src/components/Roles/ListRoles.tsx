@@ -6,9 +6,9 @@ import { saveFile } from '../../helpers/fileSaver';
 import ListActionsPopover from '../ListActionsPopover';
 import { useAppSelector } from '../../stores/hooks';
 import { Pagination } from '../Pagination';
+import LoadingSpinner from '../LoadingSpinner';
 
 import { hasPermission } from '../../helpers/userPermissions';
-import LoadingSpinner from '../LoadingSpinner';
 
 type Props = {
   roles: any[];

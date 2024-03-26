@@ -102,7 +102,7 @@ const TableSampleAppointments = ({ filterItems, setFilterItems, filters }) => {
 
   const handleCreateEventAction = ({ start, end }: SlotInfo) => {
     router.push(
-      `/appointments/appointments-new?start_time=${start.toISOString()}&end_time=${end.toISOString()}`,
+      `/appointments/appointments-new?dateRangeStart=${start.toISOString()}&dateRangeEnd=${end.toISOString()}`,
     );
   };
 

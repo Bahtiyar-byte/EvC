@@ -6,9 +6,9 @@ import { saveFile } from '../../helpers/fileSaver';
 import ListActionsPopover from '../ListActionsPopover';
 import { useAppSelector } from '../../stores/hooks';
 import { Pagination } from '../Pagination';
+import LoadingSpinner from '../LoadingSpinner';
 
 import { hasPermission } from '../../helpers/userPermissions';
-import LoadingSpinner from '../LoadingSpinner';
 
 type Props = {
   contacts: any[];
@@ -83,6 +83,15 @@ const ListContacts = ({
                   <div className={'flex-1 px-3'}>
                     <p className={'text-xs text-gray-500'}>ProjectNotes</p>
                     <p className={'line-clamp-2'}>{item.project_notes}</p>
+                  </div>
+
+                  <div className={'flex-1 px-3'}>
+                    <p className={'text-xs text-gray-500'}>Appointments</p>
+                    <p className={'line-clamp-2'}>
+                      {dataFormatter
+                        .appointmentsManyListFormatter(item.appointments)
+                        .join(', ')}
+                    </p>
                   </div>
                 </div>
                 <ListActionsPopover

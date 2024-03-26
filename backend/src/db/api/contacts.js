@@ -29,6 +29,10 @@ module.exports = class ContactsDBApi {
       { transaction },
     );
 
+    await contacts.setAppointments(data.appointments || [], {
+      transaction,
+    });
+
     return contacts;
   }
 
@@ -83,6 +87,10 @@ module.exports = class ContactsDBApi {
       { transaction },
     );
 
+    await contacts.setAppointments(data.appointments || [], {
+      transaction,
+    });
+
     return contacts;
   }
 
@@ -119,6 +127,10 @@ module.exports = class ContactsDBApi {
 
     const output = contacts.get({ plain: true });
 
+    output.appointments = await contacts.getAppointments({
+      transaction,
+    });
+
     return output;
   }
 
@@ -133,7 +145,22 @@ module.exports = class ContactsDBApi {
 
     const transaction = (options && options.transaction) || undefined;
     let where = {};
-    let include = [];
+    let include = [
+      {
+        model: db.appointments,
+        as: 'appointments',
+        through: filter.appointments
+          ? {
+              where: {
+                [Op.or]: filter.appointments.split('|').map((item) => {
+                  return { ['Id']: Utils.uuid(item) };
+                }),
+              },
+            }
+          : null,
+        required: filter.appointments ? true : null,
+      },
+    ];
 
     if (filter) {
       if (filter.id) {

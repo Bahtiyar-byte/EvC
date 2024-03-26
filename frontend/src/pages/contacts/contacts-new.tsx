@@ -47,6 +47,8 @@ const initialValues = {
   interaction_history: '',
 
   project_notes: '',
+
+  appointments: [],
 };
 
 const ContactsNew = () => {
@@ -115,6 +117,16 @@ const ContactsNew = () => {
                   name='project_notes'
                   id='project_notes'
                   component={RichTextField}
+                ></Field>
+              </FormField>
+
+              <FormField label='Appointments' labelFor='appointments'>
+                <Field
+                  name='appointments'
+                  id='appointments'
+                  itemRef={'appointments'}
+                  options={[]}
+                  component={SelectFieldMany}
                 ></Field>
               </FormField>
 

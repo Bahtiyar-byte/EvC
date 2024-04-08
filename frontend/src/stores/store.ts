@@ -14,6 +14,7 @@ import jobsSlice from './jobs/jobsSlice';
 import reportsSlice from './reports/reportsSlice';
 import rolesSlice from './roles/rolesSlice';
 import permissionsSlice from './permissions/permissionsSlice';
+import tradesSlice from './trades/tradesSlice';
 
 export const store = configureStore({
   reducer: {
@@ -32,6 +33,7 @@ export const store = configureStore({
     reports: reportsSlice,
     roles: rolesSlice,
     permissions: permissionsSlice,
+    trades: tradesSlice,
   },
 });
 

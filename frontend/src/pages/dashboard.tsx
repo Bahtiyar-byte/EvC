@@ -29,6 +29,7 @@ const Dashboard = () => {
   const [reports, setReports] = React.useState('Loading...');
   const [roles, setRoles] = React.useState('Loading...');
   const [permissions, setPermissions] = React.useState('Loading...');
+  const [trades, setTrades] = React.useState('Loading...');
 
   const [widgetsRole, setWidgetsRole] = React.useState({
     role: { value: '', label: '' },
@@ -50,6 +51,7 @@ const Dashboard = () => {
       'reports',
       'roles',
       'permissions',
+      'trades',
     ];
     const fns = [
       setUsers,
@@ -62,6 +64,7 @@ const Dashboard = () => {
       setReports,
       setRoles,
       setPermissions,
+      setTrades,
     ];
 
     const requests = entities.map((entity, index) => {
@@ -405,6 +408,32 @@ const Dashboard = () => {
                     </div>
                     <div className='text-3xl leading-tight font-semibold'>
                       {permissions}
+                    </div>
+                  </div>
+                  <div>
+                    <BaseIcon
+                      className='text-blue-500'
+                      w='w-16'
+                      h='h-16'
+                      size={48}
+                      path={mdiInformation}
+                    />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          )}
+
+          {hasPermission(currentUser, 'READ_TRADES') && (
+            <Link href={'/trades/trades-list'}>
+              <div className='rounded dark:bg-dark-900 bg-white border border-pavitra-400 dark:border-dark-700 p-6'>
+                <div className='flex justify-between align-center'>
+                  <div>
+                    <div className='text-lg leading-tight text-gray-500 dark:text-gray-400'>
+                      Trades
+                    </div>
+                    <div className='text-3xl leading-tight font-semibold'>
+                      {trades}
                     </div>
                   </div>
                   <div>

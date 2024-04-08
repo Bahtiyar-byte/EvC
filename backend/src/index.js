@@ -37,6 +37,8 @@ const rolesRoutes = require('./routes/roles');
 
 const permissionsRoutes = require('./routes/permissions');
 
+const tradesRoutes = require('./routes/trades');
+
 const options = {
   definition: {
     openapi: '3.0.0',
@@ -153,6 +155,12 @@ app.use(
   '/api/permissions',
   passport.authenticate('jwt', { session: false }),
   permissionsRoutes,
+);
+
+app.use(
+  '/api/trades',
+  passport.authenticate('jwt', { session: false }),
+  tradesRoutes,
 );
 
 app.use(

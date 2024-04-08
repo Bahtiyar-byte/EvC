@@ -80,6 +80,12 @@ const menuAside: MenuAsideItem[] = [
     permissions: 'READ_PERMISSIONS',
   },
   {
+    href: '/trades/trades-list',
+    label: 'Trades',
+    icon: mdiTable,
+    permissions: 'READ_TRADES',
+  },
+  {
     href: '/profile',
     label: 'Profile',
     icon: mdiAccountCircle,

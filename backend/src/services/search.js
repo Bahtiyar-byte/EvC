@@ -76,6 +76,8 @@ module.exports = class SearchService {
         ],
 
         reports: ['title'],
+
+        trades: ['trade'],
       };
       const columnsInt = {
         estimates: [

@@ -78,6 +78,7 @@ module.exports = {
       'reports',
       'roles',
       'permissions',
+      'trades',
       ,
     ];
     await queryInterface.bulkInsert(
@@ -310,6 +311,31 @@ primary key ("roles_permissionsId", "permissionId")
         updatedAt,
         roles_permissionsId: getId('User'),
         permissionId: getId('DELETE_REPORTS'),
+      },
+
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('User'),
+        permissionId: getId('CREATE_TRADES'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('User'),
+        permissionId: getId('READ_TRADES'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('User'),
+        permissionId: getId('UPDATE_TRADES'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('User'),
+        permissionId: getId('DELETE_TRADES'),
       },
 
       {
@@ -567,6 +593,31 @@ primary key ("roles_permissionsId", "permissionId")
         updatedAt,
         roles_permissionsId: getId('Administrator'),
         permissionId: getId('DELETE_PERMISSIONS'),
+      },
+
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('Administrator'),
+        permissionId: getId('CREATE_TRADES'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('Administrator'),
+        permissionId: getId('READ_TRADES'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('Administrator'),
+        permissionId: getId('UPDATE_TRADES'),
+      },
+      {
+        createdAt,
+        updatedAt,
+        roles_permissionsId: getId('Administrator'),
+        permissionId: getId('DELETE_TRADES'),
       },
 
       {
